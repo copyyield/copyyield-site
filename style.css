@@ -114,6 +114,21 @@ header {
     border-left: 4px solid var(--accent-blue);
 }
 
+.main-logo {
+    max-width: 280px;      
+    height: auto;          
+    margin-bottom: 5px;     
+    display: block;         
+}
+
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+}
+
 
 /* RWD - poprawka na telefony */
 @media (max-width: 600px) {
