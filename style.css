@@ -21,7 +21,7 @@ body {
 header {
     background-color: var(--bg-header);
     width: 100%;
-    padding: 30px 0; /* Zmniejszyłem padding, bo logo zajmie miejsce */
+    padding: 15px 0; 
     border-bottom: 1px solid #1a2035;
 }
 
@@ -29,19 +29,31 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    overflow: hidden; 
 }
 
-.main-logo {
-    max-width: 250px; /* Możesz zmienić tę wartość, żeby dopasować wielkość logo */
-    height: auto;
-    margin-bottom: 10px;
+.logo {
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin: 0;
 }
 
 .motto {
     color: var(--accent-blue);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     letter-spacing: 5px;
     font-weight: 700;
+    margin-top: 5px;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-top: 20px;
 }
 
 .container {
@@ -68,20 +80,23 @@ header {
     text-decoration: none;
     border-radius: 5px;
     font-size: 1.2rem;
-    transition: transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
     display: inline-block;
 }
 
 .cta-button:hover {
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    background-color: #00e692;
+    box-shadow: 0 10px 20px rgba(0, 255, 163, 0.2);
 }
 
 .preview-img {
     width: 100%;
     max-width: 450px;
+    border: 1px solid #1a2035;
     border-radius: 12px;
     margin-top: 50px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
 }
 
 .features {
@@ -94,11 +109,18 @@ header {
 
 .feature-item {
     background: var(--bg-header);
-    padding: 20px;
+    padding: 25px;
     border-radius: 8px;
     border-left: 4px solid var(--accent-blue);
 }
 
+
+/* RWD - poprawka na telefony */
 @media (max-width: 600px) {
-    .features { grid-template-columns: 1fr; }
+    .features {
+        grid-template-columns: 1fr;
+    }
+    .logo {
+        font-size: 2.2rem;
+    }
 }
